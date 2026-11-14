@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <title>Clareira · Defenda a mata</title>
+  <meta name="description" content="Construa sua vila no meio da floresta e defenda a clareira das ondas da Companhia Serra Grande. Jogo de estratégia isométrico no navegador.">
+  <meta name="theme-color" content="#0c1d11">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c1d11'/%3E%3Cpath d='M32 8 16 34h8l-10 16h36L40 34h8z' fill='%233fbf5a'/%3E%3Crect x='29' y='50' width='6' height='8' fill='%238b5a2b'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilo.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <canvas id="tela" aria-label="Mapa da clareira"></canvas>
+  <div class="vinheta" aria-hidden="true"></div>
+
+  <header class="hud-topo">
+    <div class="recursos" id="recursos"></div>
+    <div class="onda" id="onda" aria-live="polite"></div>
+    <div class="hud-dir">
+      <div class="chip" id="construtores" title="Construtores livres"></div>
+      <button class="chip botao-menu" id="btn-menu" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <aside class="objetivo" id="objetivo" hidden></aside>
+
+  <div class="velocidade" id="velocidade" hidden>
+    <button data-vel="1" aria-pressed="true">1×</button>
+    <button data-vel="2" aria-pressed="false">2×</button>
+    <button data-vel="4" aria-pressed="false">4×</button>
+  </div>
+
+  <div class="barra-baixo">
+    <button class="btn vermelho" id="btn-reparar" hidden>Reparar tudo</button>
+    <button class="btn-construir" id="btn-construir" aria-label="Construir">
+      <span>⚒</span><b>Construir</b>
+    </button>
+    <button class="btn" id="btn-antecipar">Chamar onda<small>+25% de prêmio</small></button>
+  </div>
+
+  <div class="colocar" id="colocar" hidden>
+    <div class="colocar-info" id="colocar-info"></div>
+    <button class="btn" id="colocar-nao" aria-label="Cancelar">✕</button>
+    <button class="btn verde" id="colocar-ok" aria-label="Confirmar">✓ Aqui</button>
+  </div>
+
+  <section class="painel" id="painel" hidden></section>
+
+  <section class="loja" id="loja" hidden aria-label="Construir">
+    <div class="loja-topo">
+      <div class="abas" role="tablist">
+        <button data-aba="defesa" role="tab">Defesas</button>
+        <button data-aba="recurso" role="tab">Recursos</button>
+        <button data-aba="suporte" role="tab">Suporte</button>
+      </div>
+      <button class="fechar" data-fechar-loja aria-label="Fechar">✕</button>
+    </div>
+    <div class="loja-itens" id="loja-itens"></div>
+  </section>
+
+  <div class="modal-fundo" id="modal-fundo" hidden>
+    <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
+  </div>
+
+  <div class="avisos" id="avisos" aria-live="polite"></div>
+</body>
+</html>

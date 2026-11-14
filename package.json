@@ -1,0 +1,14 @@
+{
+  "name": "clareira",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Jogo de construir e defender uma vila no meio da floresta. Canvas 2D isométrico, JavaScript puro.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
